@@ -3,4 +3,4 @@
 for letter in range(ord('a'), ord('z') + 1):
     if chr(letter) == 'e' or chr(letter) == 'q':
         continue
-    print(chr(letter), end="")
+    print("{:c}".format(letter), end="")
