@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 for num in range(100):
-    formatted_num = f"{num:02}"
+    formatted_num = "{:02}".format(num)
     if num == 89:
         print(formatted_num)
     else:
