@@ -3,7 +3,7 @@ from calculator_1 import add, sub, mul, div
 import sys
 
 if __name__ == "__main__":
-    
+
     # Get number of args to program
     num_args = len(sys.argv) - 1
 
