@@ -6,7 +6,7 @@ def max_integer(my_list=[]):
     if not my_list:
         return None
     else:
-        max_int = 0
+        max_int = -1000
         for num in my_list:
             if num > max_int:
                 max_int = num
