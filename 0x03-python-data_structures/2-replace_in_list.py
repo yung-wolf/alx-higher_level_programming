@@ -6,8 +6,8 @@ def replace_in_list(my_list, idx, element):
     '''
     if idx < 0:
         return my_list
-    elif idx > len(my_list) - 1: #if index is out of range
+    elif idx > len(my_list) - 1:  # if index is out of range
         return my_list
     else:
         my_list[idx] = element
-        return my_list  
+        return my_list

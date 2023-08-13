@@ -6,7 +6,7 @@ def element_at(my_list, idx):
     '''
     if idx < 0:
         return None
-    elif idx > len(my_list) - 1: #if index is out of range
+    elif idx > len(my_list) - 1:  # if index is out of range
         return None
     else:
-        return my_list[idx]  
+        return my_list[idx]
