@@ -10,7 +10,7 @@ def best_score(a_dictionary):
     # handle case of No dictionary being entered
     if not a_dictionary:
         return None
-    
+
     max_int = 0
 
     for key, value in a_dictionary.items():
