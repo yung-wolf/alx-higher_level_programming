@@ -2,3 +2,4 @@ create_file.sh
 hold.py
 test.py
 *main.py
+*.sh
