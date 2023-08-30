@@ -54,17 +54,6 @@ class Square:
         '''
         return self.__position
 
-    @property
-    def size(self):
-        '''
-        python3 -c 'print(__import__("my_module").my_function.__doc__)'
-        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
-
-        @size.setter:
-            check if value is an integer before assigning it to size
-        '''
-        return self.__size
-
     @position.setter
     def position(self, value):
         self.check = 0  # check for negative num in value
@@ -79,6 +68,17 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             size.__position = value
+
+    @property
+    def size(self):
+        '''
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+
+        @size.setter:
+            check if value is an integer before assigning it to size
+        '''
+        return self.__size
 
     @size.setter
     def size(self, value):
