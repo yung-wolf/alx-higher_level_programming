@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+'''
+Module 6-square
+Private instance attribute: position:
+property def position(self): to retrieve it
+property setter def position(self, value): to set it:
+
+Instantiation with optional size and optional
+position: def __init__(self, size=0, position=(0, 0)):
+'''
+
 
 class Square:
     '''

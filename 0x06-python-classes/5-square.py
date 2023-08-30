@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+'''
+Module 5-square
+class that defines a square by: (based on 4-square.py)
+Public instance method: def my_print(self):
+that prints in stdout the square with the character #:
+if size is equal to 0, print an empty line
+'''
+
 
 class Square:
     '''

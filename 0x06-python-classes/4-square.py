@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+'''
+Module 4-square
+class that defines a square by: (based on 3-square.py)
+Private instance attribute: size:
+property def size(self): to retrieve it
+property setter def size(self, value): to set it:
+'''
+
 
 class Square:
     '''

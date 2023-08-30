@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+'''
+Module 3-square
+class that defines a square by: (based on 2-square.py
+Private instance attribute: size
+Public instance method: def area(self)
+'''
+
 
 class Square:
     '''
