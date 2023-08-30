@@ -31,13 +31,15 @@ class Square:
             __position(tuple): of type int, co-ordinates of square
         '''
         if len(position) == 2:
-            if isinstance(position[0], int) and isinstance(position[1], int):        
+            if isinstance(position[0], int) and isinstance(position[1], int):
                 if position[0] >= 0 and position[1] >= 0:
                     self.__position = position
                 else:
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError("position must be a" +
+                                    " tuple of 2 positive integers")
             else:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError("position must be a" +
+                                " tuple of 2 positive integers")
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -66,7 +68,7 @@ class Square:
         self.check = 1  # check for negative num in value
         for num in value:
             if num >= 0:
-               self.check = 0
+                self.check = 0
             else:
                 self.check = 1
                 break
