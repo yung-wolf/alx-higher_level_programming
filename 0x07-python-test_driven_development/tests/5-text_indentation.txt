@@ -1,0 +1,83 @@
+# Import module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Valid Cases:
+>>> x = "abc. def, ghi: jkl? mnop; qrst"
+>>> text_indentation(x)
+abc.
+<BLANKLINE>
+def, ghi:
+<BLANKLINE>
+jkl?
+<BLANKLINE>
+mnop; qrst
+
+>>> x = "abc. def, ghi: jkl? mnop; qrst."
+>>> text_indentation(x)
+abc.
+<BLANKLINE>
+def, ghi:
+<BLANKLINE>
+jkl?
+<BLANKLINE>
+mnop; qrst.
+<BLANKLINE>
+
+>>> x = "."
+>>> text_indentation(x)
+.
+<BLANKLINE>
+
+>>> text_indentation("")
+
+>>> text_indentation("What??? He is Him...")
+What?
+<BLANKLINE>
+?
+<BLANKLINE>
+?
+<BLANKLINE>
+He is Him.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("What? He is Him.")
+What?
+<BLANKLINE>
+He is Him.
+<BLANKLINE>
+
+>>> text_indentation("This is the U.S.A. flag.")
+This is the U.
+<BLANKLINE>
+S.
+<BLANKLINE>
+A.
+<BLANKLINE>
+flag.
+<BLANKLINE>
+
+---------------------
+
+# INVALID CASES
+>>> x = 5
+>>> text_indentation(x)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> x = ['a', 'b', 'c']
+>>> text_indentation(x)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+

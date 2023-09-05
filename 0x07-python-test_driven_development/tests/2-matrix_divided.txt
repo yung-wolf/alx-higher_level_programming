@@ -1,0 +1,74 @@
+# import matrix
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# On Success
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix
+[[1, 2, 3], [4, 5, 6]]
+
+# Division by 0
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+# Non-numeric `div` value
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, "hello")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+# Different row sizes
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6, 7]
+... ]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+# Non-numeric elements in the matrix
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 'c']
+... ]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Matrix with empty rows
+>>> matrix = [[], []]
+>>> matrix_divided(matrix, 3)
+[[], []]
+
+# Matrix with negative values
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, -6, -8]
+... ]
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, -3.0, -4.0]]
+
+# Test floating point precision
+>>> matrix = [[1.0/3, 2.0/3], [1.0/3, 2.0/3]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test large number

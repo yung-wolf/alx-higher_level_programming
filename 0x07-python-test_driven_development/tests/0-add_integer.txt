@@ -1,0 +1,78 @@
+First import method to test
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test positive ints
+>>> add_integer(2, 3)
+5
+
+Test negative ints
+>>> add_integer(-2, -3)
+-5
+
+Test positive floats
+>>> add_integer(5.5, 7.5)
+12
+
+Test negative floats
+>>> add_integer(-2.5, -3.5)
+-5
+
+Test default value of `b`
+>>> add_integer(5.5)
+103
+
+Test missing arg for `a`
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Passing strings to args `a` and `b`
+>>> add_integer('a', 'b')
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(1, 'b')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+Pass list as arg for `a`
+>>> add_integer([1])
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+   ...
+TypeError: a must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(7, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer(7, 3, 2)
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+>>> add_integer(float(NaN))
+Traceback (most recent call last):
+    ...
+NameError: name 'NaN' is not defined
+
+>>> add_integer(float("NaN"))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(10**20, 10**30)
+1000000000100000000000000000000
