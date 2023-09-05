@@ -38,7 +38,10 @@ class Rectangle:
         shape = ""
 
         while self.row != 0:
-            shape += '#' * self.__width + '\n'
+            if self.column == 0:
+                break
+            else:
+                shape += '#' * self.__width + '\n'
             self.row -= 1
         return shape[:-1]
 
