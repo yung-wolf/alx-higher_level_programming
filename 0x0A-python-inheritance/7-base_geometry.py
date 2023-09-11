@@ -19,3 +19,5 @@ class BaseGeometry:
             raise TypeError(f'{name} must be an integer')
         elif value <= 0:
             raise ValueError(f'{name} must be greater than 0')
+        else:
+            pass;
