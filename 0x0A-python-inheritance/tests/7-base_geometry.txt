@@ -78,3 +78,8 @@ TypeError: dic must be an integer
 Traceback (most recent call last):
     ...
 TypeError: str must be an integer
+
+>>> bg.integer_validator(NULL)
+Traceback (most recent call last):
+    ...
+NameError: name 'NULL' is not defined
