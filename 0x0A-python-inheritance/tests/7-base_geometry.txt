@@ -48,3 +48,28 @@ ValueError: float must be greater than 0
 Traceback (most recent call last):
     ...
 TypeError: list must be an integer
+
+>>> bg.integer_validator("bool", True)
+Traceback (most recent call last):
+    ....
+TypeError: bool must be an integer
+
+>>> bg.integer_validator("None", None)
+Traceback (most recent call last):
+    ...
+TypeError: None must be an integer
+
+>>> bg.integer_validator("dic", {'a': 1})
+Traceback (most recent call last):
+    ...
+TypeError: dic must be an integer
+
+>>> bg.integer_validator("dic", (1,2,3))
+Traceback (most recent call last):
+    ...
+TypeError: dic must be an integer
+
+>>> bg.integer_validator("dic", {1,2,3})
+Traceback (most recent call last):
+    ...
+TypeError: dic must be an integer
