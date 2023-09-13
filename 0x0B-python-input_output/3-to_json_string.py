@@ -6,13 +6,12 @@ Has one function, to_json_string()
 """
 
 
-def to_json_string(obj):
+def to_json_string(my_obj):
     """A function that returns the JSON representation of an object (string):
 
     Args:
         obj (object): python object
     """
-    if (obj):
-        import json
-        json_string = json.dumps(obj)
-        return json_string
+    import json
+    json_string = json.dumps(my_obj)
+    return json_string
