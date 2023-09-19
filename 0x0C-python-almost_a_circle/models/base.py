@@ -61,6 +61,15 @@ class Base:
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         from models.rectangle import Rectangle
-        dummy_rect = Rectangle(1, 1)
-        dummy_rect.update(**dictionary)
-        return dummy_rect
+        class_name = cls.__name__
+        if class_name == 'Rectangle':
+            dummy_rect = Rectangle(1, 1)
+            dummy_rect.update(**dictionary)
+            return dummy_rect
+        elif class_name == 'Square':
+            dummy_sq = Square(1)
+            dummy_sq.update(**dictionary)
+            return dummy_sq
+        else:
+            raise TypeError('Wrong class entered. Expected either '
+                            'Rectangle of Square class')
