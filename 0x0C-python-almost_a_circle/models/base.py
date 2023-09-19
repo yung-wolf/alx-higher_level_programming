@@ -79,22 +79,21 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances from a json file"""
         class_name = cls.__name__
-        if class_name == 'Rectangle':
-            list_rectangle = []
-            try:
+        from models.rectangle import Rectangle
+        from models.square import Square
+        try:
+            if class_name == 'Rectangle':
+                list_rectangle = []
                 with open(class_name + ".json", "r") as j_file:
-                    f_obj = json.load(j_file)
+                    f_obj = json.load(j_file)  # change to file object
                     for entry in f_obj:
                         r1_json_str = Rectangle.to_json_string(entry)
                         r1_dic = Rectangle.from_json_string(r1_json_str)
                         r1 = Rectangle.create(**r1_dic)
                         list_rectangle.append(r1)
                     return list_rectangle
-            except FileNotFoundError:
-                return []
-        elif class_name == 'Square':
-            list_square = []
-            try:
+            elif class_name == 'Square':
+                list_square = []
                 with open(class_name + ".json", "r") as j_file:
                     f_obj = json.load(j_file)
                     for entry in f_obj:
@@ -103,8 +102,8 @@ class Base:
                         sq1 = Square.create(**sq1_dic)
                         list_square.append(sq1)
                     return list_square
-            except FileNotFoundError:
-                return []
-        else:
-            raise TypeError('Wrong class entered. Expected either '
-                            'Rectangle or Square class')
+            else:
+                raise TypeError('Wrong class entered. Expected either '
+                                'Rectangle or Square class')
+        except FileNotFoundError:
+            return []
