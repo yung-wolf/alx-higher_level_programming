@@ -39,7 +39,7 @@ class Base:
         json_list = []  # empty list to hold dict of instances
         if list_objs is None:
             with open(f"{cls.__name__}.json", "w") as j_file:
-                json.dump('[]', j_file)
+                json.dump([], j_file)
         else:
             with open(f"{cls.__name__}.json", "w") as j_file:
                 for obj in list_objs:
