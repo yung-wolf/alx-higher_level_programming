@@ -38,14 +38,15 @@ class Base:
 
         json_list = []  # empty list to hold dict of instances
         if list_objs is None:
-            with open(f"{cls.__name__}.json", "w") as j_file:
-                json.dump([], j_file)
+            with open(f"{cls.__name__}.json", "w") as file:
+                json_str = cls.to_json_string([])
+                file.write(json_str)
         else:
-            with open(f"{cls.__name__}.json", "w") as j_file:
+            with open(f"{cls.__name__}.json", "w") as file:
                 for obj in list_objs:
-                    obj_dic = obj.to_dictionary()  # ch obj to dic
-                    json_list.append(obj_dic)  # adds obj json_list
-                json.dump(cls.to_json_string(json_list), j_file)
+                    json_list.append(obj.to_dictionary())  # adds obj json_list
+                json_str = cls.to_json_string(json_list)
+                file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
