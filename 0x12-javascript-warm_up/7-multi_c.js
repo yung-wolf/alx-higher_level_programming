@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
-let arg1 = parseInt(`${argv[2]}`);
+let arg1 = parseInt(process.argv[2]);
 
 if (!isNaN(arg1)) {
   while (arg1 > 0) {
