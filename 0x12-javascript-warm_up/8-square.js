@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 
 let col = parseInt(process.argv[2]);
 let row = col;
