@@ -1,15 +1,12 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
-const argvLen = argv.length;
-
-if (argvLen === 2 || argvLen === 3) {
+if (process.argv.length === 2 || process.argv.length === 3) {
   console.log(0);
 } else {
   let secondBigNum = 0;
-  let biggestNum = parseInt(argv[2]);
+  let biggestNum = parseInt(process.argv[2]);
 
-  argv.forEach((val, index) => {
+  process.argv.forEach((val, index) => {
     if (parseInt(val) > biggestNum) {
       secondBigNum = biggestNum;
       biggestNum = parseInt(val);

@@ -8,7 +8,6 @@ function factorial (num) {
   }
 }
 
-const { argv } = require('node:process');
-const arg1 = parseInt(argv[2]);
+const arg1 = parseInt(process.argv[2]);
 
 console.log(factorial(arg1));
