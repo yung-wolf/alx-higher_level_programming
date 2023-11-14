@@ -1,7 +1,6 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 
-const { argv } = require('node:process');
-let col = parseInt(`${argv[2]}`);
+let col = parseInt(process.argv[2]);
 let row = col;
 
 if (!isNaN(col)) {
