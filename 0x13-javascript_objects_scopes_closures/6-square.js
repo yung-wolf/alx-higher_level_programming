@@ -12,7 +12,7 @@ module.exports = class Square extends SquareP {
 
       const line = [];
       while (row > 0) {
-        line.push('C');
+        line.push(c);
         row--;
       }
       const lineString = line.join('');
