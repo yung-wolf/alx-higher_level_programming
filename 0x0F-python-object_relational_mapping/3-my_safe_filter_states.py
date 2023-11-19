@@ -23,7 +23,7 @@ def safe_print_state(user_name, passwd, db, state_name):
             port=3306
             )
 
-    cur = db.cursor(MySQLdb.cursors.DictCursor)
+    cur = db.cursor()
 
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
 
