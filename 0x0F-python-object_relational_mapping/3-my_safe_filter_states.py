@@ -11,8 +11,8 @@ import sys
 
 
 def safe_print_state(user_name, passwd, db, state_name):
-    """A script that takes in arguments and displays all values in the states 
-    table of hbtn_0e_0_usa where name matches the argument. But this time, 
+    """A script that takes in arguments and displays all values in the states
+    table of hbtn_0e_0_usa where name matches the argument. But this tim,
     one that is safe from MySQL injections!
     """
     db = MySQLdb.connect(
