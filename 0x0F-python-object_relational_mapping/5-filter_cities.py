@@ -23,7 +23,7 @@ def list_cities(user_name, passwd, db, state_name):
             port=3306
             )
 
-    cur = db.cursor(MySQLdb.cursors.DictCursor)
+    cur = db.cursor()
 
     query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = "
     query += "states.id WHERE states.name = %s ORDER BY cities.id ASC"
@@ -32,13 +32,15 @@ def list_cities(user_name, passwd, db, state_name):
     rows = cur.fetchall()
 
     i = 1  # Loop counter
+    x = 0
 
     for state in rows:
         if i < len(rows):
-            print(state['name'], end=", ")
+            print(state[0], end=", ")
         else:
-            print(state['name'])
+            print(state[0])
         i += 1
+        x += 1
 
     cur.close()
     db.close()
