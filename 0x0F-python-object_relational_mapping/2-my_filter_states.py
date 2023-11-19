@@ -38,7 +38,8 @@ def print_state_name(user_name, passwd, db, state_name):
 
     # print result
     for state in cur:
-        print(state)
+        if state[1] == state_name:
+            print(state)
 
     cur.close()
     db.close()
