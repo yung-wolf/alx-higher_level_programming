@@ -1,26 +1,29 @@
 #!/usr/bin/python3
 
 """
-Module: model_state
+Module: model_city
+
+Holds one class City()
 """
 
 import sys
-from sqlalchemy import create_engine, Column, Integer, VARCHAR
+from sqlalchemy import create_engine, Column, Integer, ForeignKey, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from model_state import Base, State
 
-Base = declarative_base()
 
-
-class State(Base):
-    """Models a State in the USA. Tied to a database using sqlalchemy.
+class City(Base):
+    """Models a city in the USA. Tied to a database using sqlalchemy.
     Inherits from Base in declarative_base.
     """
-    __tablename__ = "states"
+    __tablename__ = "cities"
 
     id = Column("id", Integer, primary_key=True, autoincrement=True)
     name = Column("name", VARCHAR(128), nullable=False)
-    cities = relationship("City", back_populates="state")
+    state_id = Column("state_id", Integer, ForeignKey("states.id"), nullable=False)
+
+    state = relationship("State", back_populates="cities")
 
 
 if __name__ == "__main__":
