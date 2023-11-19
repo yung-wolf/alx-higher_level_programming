@@ -20,7 +20,7 @@ def print_states_n(user_name, passwd, db):
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name "
-                "LIKE 'N%' ORDER BY states.id ASC")
+                "LIKE BINARY 'N%' ORDER BY states.id ASC")
 
     for state in cur:
         print(state)
