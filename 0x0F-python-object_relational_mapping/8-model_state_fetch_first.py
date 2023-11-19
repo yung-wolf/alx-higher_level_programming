@@ -25,4 +25,7 @@ if __name__ == "__main__":
     session = Session()
 
     first_state = session.query(State).filter_by(id=1).first()
-    print(f"{first_state.id}: {first_state.name}")
+    if first_state is None:
+        print("Nothing")
+    else:
+        print(f"{first_state.id}: {first_state.name}")
