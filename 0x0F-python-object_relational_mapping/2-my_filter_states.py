@@ -29,8 +29,7 @@ def print_state_name(user_name, passwd, db, state_name):
     cur = db.cursor()
 
     # write query
-    query = "SELECT * FROM states WHERE name LIKE '{:s}' "
-    query += "ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC"
     f_query = query.format(state_name)
 
     # exe query
