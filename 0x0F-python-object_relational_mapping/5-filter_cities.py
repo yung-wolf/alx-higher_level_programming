@@ -26,7 +26,7 @@ def list_cities(user_name, passwd, db, state_name):
     cur = db.cursor()
 
     query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = "
-    query += "states.id WHERE states.name LIKE %s ORDER BY cities.id ASC"
+    query += "states.id WHERE states.name = %s ORDER BY cities.id ASC"
 
     cur.execute(query, (state_name,))
     rows = cur.fetchall()
