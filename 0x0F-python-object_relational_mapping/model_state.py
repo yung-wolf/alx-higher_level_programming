@@ -7,7 +7,7 @@ Module: model_state
 import sys
 from sqlalchemy import create_engine, Column, Integer, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+
 
 Base = declarative_base()
 
@@ -20,7 +20,6 @@ class State(Base):
 
     id = Column("id", Integer, primary_key=True, autoincrement=True)
     name = Column("name", VARCHAR(128), nullable=False)
-    cities = relationship("City", back_populates="state")
 
 
 if __name__ == "__main__":
