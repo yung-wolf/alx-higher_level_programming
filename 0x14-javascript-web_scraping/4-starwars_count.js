@@ -25,12 +25,12 @@ request.get(url, (error, response, body) => {
       const chars = glossary.results[j].characters;
       for (let i = 0; i < glossary.results[j].characters.length; i++) {
         // use link to find character ID
-        if (chars[i] === wedge) {
+        if (chars[i].endsWith("18/")) {
           count++;
         }
       }
     }
     // print count === number of movies with wedge in it
-    console.log(String(count).trim());
+    console.log(count);
   }
 });
