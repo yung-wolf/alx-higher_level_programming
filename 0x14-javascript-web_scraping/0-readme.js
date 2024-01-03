@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // reads a file. The first argument is the file path
 // The content of the file must be read in utf-8
 
