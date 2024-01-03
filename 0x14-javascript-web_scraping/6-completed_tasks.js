@@ -34,7 +34,7 @@ request.get(url, (error, response, body) => {
       }
 
       // Add last entry to dict record
-      if (i === (obj.length - 1)) {
+      if (i === (obj.length - 1) && count > 0) {
         records[String(usrIdCheck)] = count;
       }
     }
