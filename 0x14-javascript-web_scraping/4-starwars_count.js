@@ -7,7 +7,6 @@ const request = require('request');
 // get URL
 const args = process.argv.slice(2);
 const url = args[0];
-const wedge = 'https://swapi-api.alx-tools.com/api/people/18/';
 let count = 0;
 
 request.get(url, (error, response, body) => {
@@ -25,7 +24,7 @@ request.get(url, (error, response, body) => {
       const chars = glossary.results[j].characters;
       for (let i = 0; i < glossary.results[j].characters.length; i++) {
         // use link to find character ID
-        if (chars[i].endsWith("18/")) {
+        if (chars[i].endsWith('18/')) {
           count++;
         }
       }
