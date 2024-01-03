@@ -31,6 +31,6 @@ request.get(url, (error, response, body) => {
       }
     }
     // print count === number of movies with wedge in it
-    console.log(count);
+    console.log(String(count).trim());
   }
 });
